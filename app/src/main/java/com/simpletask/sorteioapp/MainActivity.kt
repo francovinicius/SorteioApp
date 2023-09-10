@@ -12,6 +12,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val buttonGenerate = findViewById<Button>(R.id.buttonGenerate)
+        val result = findViewById<TextView>(R.id.textResult)
 
+        buttonGenerate.setOnClickListener(View.OnClickListener {
+            val randomNumber = Random().nextInt(10) + 1
+            result.text = "O Número Sorteado foi: $randomNumber"
+            result.visibility = View.VISIBLE
+        })
     }
 }
